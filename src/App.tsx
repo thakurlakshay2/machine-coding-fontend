@@ -30,7 +30,7 @@ function App() {
         </button>
       </div>
 
-      <div className="overflow-scroll h-100 inline-flex w-full justify-between m-5 p-10	">
+      <div className=" inline-flex w-full justify-between m-5 p-10	">
         <EmployeeList
           employeeList={employeeData}
           selectedEmployee={setEmployeeDetail}
