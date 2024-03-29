@@ -7,7 +7,9 @@ const EmployeeList: React.FC<EmployeeListProps> = ({
   deleteEmployee,
 }) => {
   const [selectedEmloyee, setSelectedEmployee] = useState<string>("");
+
   const scrollRef = useRef<HTMLDivElement>(null);
+
   const [scrollHeight, setScrollHeight] = useState<number>(0);
   const [scrollBarWidth, setScrollBarWidth] = useState<number>(0);
   useLayoutEffect(() => {
@@ -28,6 +30,7 @@ const EmployeeList: React.FC<EmployeeListProps> = ({
   }, []);
 
   const handleScroll = () => {
+    console.log(scrollRef);
     setScrollBarWidth(scrollRef.current?.scrollTop || 0);
   };
   return (

@@ -1,4 +1,4 @@
-import { NewEmployeeData } from "../Components/AddNewEmployee/typings";
+import { NewEmployeeData } from "../Components/EmployeeMC/AddNewEmployee/typings";
 
 export const database: Array<NewEmployeeData> = [
   {
