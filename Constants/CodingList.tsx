@@ -17,4 +17,9 @@ export const MACHINE_CODING_DATA = [
     path: "/debounce",
     render: <Debounce />,
   },
+  {
+    title: "Not found",
+    path: "/*",
+    render: <>ERROR NOTHING HERE</>,
+  },
 ];

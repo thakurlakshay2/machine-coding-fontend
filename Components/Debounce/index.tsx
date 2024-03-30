@@ -4,15 +4,18 @@ import { useEffect, useState } from "react";
 import { FRUITS } from "../../Constants/Debounce";
 import { Checkbox } from "@material-tailwind/react";
 
+//usage of debounce is basic ,, to delay function execution .. whatevery that function may be
+///best case scenario would be
+// 1. Ui delay in changes, specially if change is too big and too sudden
+// 2. api called would be reduced  , depending on the conditions, eg. call api, for search list whenever someting is written in input
+//      in that case debounce not only improves frontend , but also reduced network load.
+
 const Debounce: React.FC<DebounceProps> = () => {
   const [searchFruit, setSearchFruit] = useState<string>("");
   const [debounceSearch] = useDebounce(searchFruit, 700);
   const [fruitList, setFruitList] = useState<Array<string>>(FRUITS);
   const [isDebounce, setIsDebounce] = useState<boolean>(false);
 
-  useEffect(() => {
-    console.log(isDebounce);
-  }, [isDebounce]);
   useEffect(() => {
     if (!isDebounce) {
       return;
@@ -21,7 +24,6 @@ const Debounce: React.FC<DebounceProps> = () => {
       setFruitList(FRUITS);
       return;
     }
-    console.log(debounceSearch);
     setFruitList(
       FRUITS.filter((data) => {
         return data.match(debounceSearch);

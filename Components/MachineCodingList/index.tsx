@@ -3,7 +3,7 @@ import { MACHINE_CODING_DATA } from "../../Constants/CodingList";
 
 const MachineCodingList: React.FC<MachineCodingListProps> = () => {
   return (
-    <div>
+    <div className="flex gap-5 ">
       {MACHINE_CODING_DATA.map((data, i) => {
         if (i > 0)
           return (
